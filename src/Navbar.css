@@ -1,0 +1,108 @@
+/* body {
+    background-color: white;
+  }
+  
+  .navbar-card {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 100px;
+    top: 0;
+    bottom: 30px;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    
+  }
+  
+  .ant-card-body {
+    padding: 16px;
+    background: linear-gradient(to top, #8e2de2, #4a00e0);
+    color: white;
+    width: 300px;
+    height: 500px;
+   
+  }
+  
+  .ant-list-item {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .ant-list-item:hover {
+    transform: scale(1.05);
+  } */
+
+  .test_ctn {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 50px;
+    /* background-color: #f2f2f2; */
+  }
+  
+  .test_nav {
+    width: 17%;
+    height: 100%;
+    background: linear-gradient(to top, #8e2de2, #4a00e0);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .test_nav_link {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 36px;
+     color: #a0a0a0; 
+    font-size: 20px;
+    border: none;
+    background-color: transparent; 
+  }
+  .test_nav_link:hover {
+    color: #ffffff; /* set text color to white */
+  }
+  
+  .test_nav_link_blob {
+    position: absolute;
+    background-color: #f2f2f2;
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    padding: 6px;
+    right: -10px;
+    opacity: 0; /* hide blob by default */
+  transition: opacity 0.2s ease-in-out;
+  }
+  .test_nav_link:hover .test_nav_link_blob {
+    opacity: 1; /* show blob on hover */
+  }
+  
+  .test_nav_hr_ctn {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .test_nav_hr {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 72px); /* adjust left and right gap */
+  height: 1px;
+  border: none;
+  background-color: #f2f2f2;
+  }
