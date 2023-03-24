@@ -17,7 +17,7 @@
 
 // export default UserProfile;
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function UserProfile(props) {
   const [user, setUser] = useState(null);
@@ -26,47 +26,79 @@ function UserProfile(props) {
     async function fetchUser() {
       const response = await fetch(`https://panorbit.in/api/users.json`);
       const data = await response.json();
-      setUser(data.users.find(u => u.id === props.userId));
+      setUser(data.users.find((u) => u.id === props.userId));
     }
     fetchUser();
   }, [props.userId]);
-
+  console.log(user);
   return user ? (
     <div className="user-profile">
-      <div className="row">        
+      <div className="row">
         <div className="col-md-4">
-          <img src={user.profilepicture} alt="User Profile" className="profile-picture" />
+          <img
+            src={user.profilepicture}
+            alt="User Profile"
+            className="profile-picture"
+          />
         </div>
         <div className="col-md-8">
           <h2>{user.username}</h2>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Phone:</strong> {user.phone}</p>
-          <p><strong>Website:</strong> {user.website}</p>
+          <p>
+            <strong>Email:</strong> {user.email}
+          </p>
+          <p>
+            <strong>Phone:</strong> {user.phone}
+          </p>
+          <p>
+            <strong>Website:</strong> {user.website}
+          </p>
           <hr />
-          <p><strong>Company:</strong></p>
+          <p>
+            <strong>Company:</strong>
+          </p>
           <ul>
-            <li><strong>Name:</strong> {user.company.name}</li>
-            <li><strong>Catch Phrase:</strong> {user.company.catchPhrase}</li>
-            <li><strong>BS:</strong> {user.company.bs}</li>
+            <li>
+              <strong>Name:</strong> {user.company.name}
+            </li>
+            <li>
+              <strong>Catch Phrase:</strong> {user.company.catchPhrase}
+            </li>
+            <li>
+              <strong>BS:</strong> {user.company.bs}
+            </li>
           </ul>
         </div>
       </div>
       <div className="row">
         <div className="col-md-6">
           <h3>Address</h3>
-          <p><strong>Street:</strong> {user.address.street}</p>
-          <p><strong>Suite:</strong> {user.address.suite}</p>
-          <p><strong>City:</strong> {user.address.city}</p>
-          <p><strong>ZIP Code:</strong> {user.address.zipcode}</p>
-          <p><strong>Geo:</strong> ({user.address.geo.lat}, {user.address.geo.lng})</p>        
+          <p>
+            <strong>Street:</strong> {user.address.street}
+          </p>
+          <p>
+            <strong>Suite:</strong> {user.address.suite}
+          </p>
+          <p>
+            <strong>City:</strong> {user.address.city}
+          </p>
+          <p>
+            <strong>ZIP Code:</strong> {user.address.zipcode}
+          </p>
+          <p>
+            <strong>Geo:</strong> ({user.address.geo.lat},{" "}
+            {user.address.geo.lng})
+          </p>
         </div>
         <div className="col-md-6">
           <div className="map-container">
-            <img src={`https://maps.googleapis.com/maps/api/staticmap?center=${user.address.geo.lat},${user.address.geo.lng}&zoom=13&size=600x400&key=YOUR_API_KEY`} alt="Map" />
+            <img
+              src={`https://maps.googleapis.com/maps/api/staticmap?center=${user.address.geo.lat},${user.address.geo.lng}&zoom=13&size=600x400&key=YOUR_API_KEY`}
+              alt="Map"
+            />
           </div>
         </div>
       </div>
-  </div>
+    </div>
   ) : null;
 }
 
