@@ -42,26 +42,11 @@ function UserProfile(props) {
             <div className="text_right_header">{user.website}</div>
           </div>
         </div>
-        {/* <div className="container_details_name">
-          <span className="container_details_name_label">Username:</span>{" "}
-          <strong>{user.username}</strong>
-        </div>
-        <div className="container_details_name">
-          <span className="container_details_name_label">E-mail:</span>{" "}
-          <strong>{user.email}</strong>
-        </div>
-        <div className="container_details_name">
-          <span className="container_details_name_label">Phone:</span>{" "}
-          <strong>{user.phone}</strong>
-        </div>
-        <div className="container_details_name">
-          <span className="container_details_name_label">Website:</span>{" "}
-          <strong>{user.website}</strong>
-        </div> */}
+
 
         <hr className="container_hr_tag" />
 
-        <strong className="container_details_username">Company</strong>
+        <div className="container_details_company">Company</div>
         <div className="container_info">
           <div className="container_left">
             <div className="text_left_header">Name</div>
@@ -79,22 +64,7 @@ function UserProfile(props) {
             <div className="text_right_header">{user.company.bs}</div>
           </div>
         </div>
-        {/* <div className="container_details_name">
-          <span className="container_details_name_label">Name:</span>{" "}
-          <strong>{user.company.name}</strong>
-        </div>
-        <div className="container_details_name">
-          <span className="container_details_name_label">Catch Phrase:</span>{" "}
-          <strong>{user.company.catchPhrase}</strong>
-        </div>
-        <div className="container_details_name">
-          <span className="container_details_name_label">BS:</span>{" "}
-          <strong>{user.company.bs}</strong>
-        </div>
-        <div className="container_details_name">
-          <span className="container_details_name_label">Website:</span>{" "}
-          <strong>{user.website}</strong>
-        </div> */}
+
       </div>
       <div className="container_2">
         <div className="container_address">
@@ -119,22 +89,7 @@ function UserProfile(props) {
               <div className="text_right_header">{user.address.zipcode}</div>
             </div>
           </div>
-          {/* <div className="container_details_name">
-            <span className="container_details_name_label">Street:</span>{" "}
-            <strong>{user.address.street}</strong>
-          </div>
-          <div className="container_details_name">
-            <span className="container_details_name_label">Suite:</span>{" "}
-            <strong>{user.address.suite}</strong>
-          </div>
-          <div className="container_details_name">
-            <span className="container_details_name_label">City:</span>{" "}
-            <strong>{user.address.city}</strong>
-          </div>
-          <div className="container_details_name">
-            <span className="container_details_name_label">Zipcode:</span>{" "}
-            <strong>{user.address.zipcode}</strong>
-          </div> */}
+
         </div>
         <div className="container_map">
           <iframe
@@ -144,78 +99,6 @@ function UserProfile(props) {
         </div>
       </div>
 
-      {/* <div className="container_1">
-        <img
-          src={user.profilepicture}
-          alt="User Profile"
-          className="profile-picture"
-        />
-      
-      <div className="container_details">
-
-        <strong className='container_details_username'>{user.name}</strong>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>Username:</span> <strong>{user.username}</strong>
-        </div>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>E-mail:</span> <strong>{user.email}</strong>
-        </div>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>Phone:</span> <strong>{user.phone}</strong>
-        </div>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>Website:</span> <strong>{user.website}</strong>
-        </div>
-
-        <hr className="container_hr_tag" />
-
-        <strong className='container_details_username'>Company</strong>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>Name:</span> <strong>{user.company.name}</strong>
-        </div>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>Catch Phrase:</span> <strong>{user.company.catchPhrase}</strong>
-        </div>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>BS:</span> <strong>{user.company.bs}</strong>
-        </div>
-        <div className='container_details_name'>
-          <span className='container_details_name_label'>Website:</span> <strong>{user.website}</strong>
-        </div>
-
-        </div>
-
-      </div>
-
-      <div className="container_2">
-        <div className="container_address">
-          <strong className='container_details_username'>Address</strong>
-          <div className='container_details_name'>
-            <span className='container_details_name_label'>Street:</span> <strong>{user.address.street}</strong>
-          </div>
-          <div className='container_details_name'>
-            <span className='container_details_name_label'>Suite:</span> <strong>{user.address.suite}</strong>
-          </div>
-          <div className='container_details_name'>
-            <span className='container_details_name_label'>City:</span> <strong>{user.address.city}</strong>
-          </div>
-          <div className='container_details_name'>
-            <span className='container_details_name_label'>Zipcode:</span> <strong>{user.address.zipcode}</strong>
-          </div>
-
-
-
-
-        </div>
-        <div className="container_map">
-
-          <iframe
-            src={`https://maps.google.com/maps?q=${user.address.geo.lat},${user.address.geo.lng}&hl=es;&output=embed`}
-            alt="Map"
-          />
-
-        </div>
-      </div> */}
     </div>
   ) : null;
 }

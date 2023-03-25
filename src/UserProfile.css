@@ -1,88 +1,4 @@
-/* .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .container_1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   width: 50%;
-  }
-  
-  .profile-picture {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  .container_details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 20px;
-  }
-  
-  .container_details_username {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .container_details_name {
-    margin-bottom: 5px;
-  }
-  
-  .container_details_name_label {
-    color: #999;
-    margin-right: 5px;
-  }
-  
-  .container_details_name strong {
-    color: #333;
-    font-weight: bold;
-  }
-  
-  
-  .container_hr_tag {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #ccc;
-  }
-  
-  .container_2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-  }
-  
-  .container_address {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .container_map {
-    width: 600px;
-    height: 400px;
-    margin-left: 20px;
-    overflow: hidden;
-  }
-  
-  .container_map img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-   */
+
 .container {
   display: flex;
   flex-direction: row;
@@ -158,6 +74,11 @@
 .container_details_username {
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 10px;
+}
+.container_details_company {
+  font-size: 24px;
+  color: #aaaaaa;
   margin-bottom: 10px;
 }
 
