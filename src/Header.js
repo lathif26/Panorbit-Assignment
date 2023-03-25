@@ -3,6 +3,7 @@ import "./Header.css";
 
 function Header({ userProp }) {
   const [showMenu, setShowMenu] = useState(false);
+  const [showCard, setShowCard] = useState(false); // New state variable
   const [user, setUser] = useState(null);
 
   function toggleMenu() {
@@ -13,10 +14,14 @@ function Header({ userProp }) {
     // handle signout
   }
 
+  function toggleCard() {
+    setShowCard((prev) => !prev);
+  }
+
   useEffect(() => {
     setUser(userProp);
   }, [userProp]);
-  console.log(user);
+
   return (
     <React.Fragment>
       {user && (
@@ -25,16 +30,30 @@ function Header({ userProp }) {
             <button className="navbar-button">Navbar</button>
           </div>
           <div className="header-right">
-            <div className="profile-dropdown" onClick={toggleMenu}>
-              <img
-                src={user.profilepicture}
-                alt="User Profile"
-                className="profile-picture"
-              />
-              <span className="username">{user.name}</span>
-              <i className={`arrow ${showMenu ? "up" : "down"}`}></i>
-            </div>
-            {showMenu && (
+            {showCard ? ( // Display the card if the state is true
+              <div className="user-card" onClick={toggleCard}>
+                <img
+                  src={user.profilepicture}
+                  alt="User Profile"
+                  className="profile-picture"
+                />
+                <div className="user-details">
+                  <div className="name">{user.name}</div>
+                  <div className="username">{user.username}</div>
+                </div>
+              </div>
+            ) : ( // Otherwise, display the dropdown button
+              <div className="profile-dropdown" onClick={toggleMenu}>
+                <img
+                  src={user.profilepicture}
+                  alt="User Profile"
+                  className="profile-picture"
+                />
+                <span className="username">{user.name}</span>
+                <i className={`arrow ${showMenu ? "up" : "down"}`}></i>
+              </div>
+            )}
+            {showMenu && !showCard && ( // Don't display the menu if the card is displayed
               <div className="menu">
                 <div className="user-info">
                   <img

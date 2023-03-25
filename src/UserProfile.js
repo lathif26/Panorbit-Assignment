@@ -22,7 +22,7 @@ function UserProfile(props) {
           alt="User Profile"
           className="profile-picture"
         />
-      </div>
+      
       <div className="container_details">
 
         <strong className='container_details_username'>{user.name}</strong>
@@ -55,7 +55,7 @@ function UserProfile(props) {
           <span className='container_details_name_label'>Website:</span> <strong>{user.website}</strong>
         </div>
 
-
+        </div>
 
       </div>
 

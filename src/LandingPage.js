@@ -58,14 +58,14 @@ function LandingPage({ selectedUser }) {
     <div>
       <Header userProp={user} />
       <div className="container">
-        <div className="container_outline">
+       
           <div className="container_1">
             <Navbar />
           </div>
           <div className="container_2">
             <UserProfile userId={Number(slug)} />
           </div>
-        </div>
+       
       </div>
     </div>
   );
