@@ -14,12 +14,6 @@ function App() {
   return (
     <Router>
       <div className="app">
-        {/* {selectedUser ? (
-        <LandingPage selectedUser={selectedUser} />
-      ) : (
-        <UserList setSelectedUser={setSelectedUser} />
-      )} */}
-
         <Routes>
           <Route
             exact

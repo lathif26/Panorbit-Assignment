@@ -60,7 +60,7 @@
 //         </div>
 
 //         <NavButton title="Profile" />
-        
+
 //       </div>
 //       <div className="test_body"></div>
 //     </div>
@@ -131,7 +131,7 @@
 //         </div>
 
 //         <NavButton title="ToDo" />
-        
+
 //       </div>
 //       <div className="test_body"></div>
 //     </div>
@@ -140,8 +140,8 @@
 
 // export default Navbar;
 
-import React, { useState } from 'react';
-import './Navbar.css';
+import React, { useState } from "react";
+import "./Navbar.css";
 // import Gallery from './Gallery';
 // import Posts from './Posts';
 // import Todo from './Todo';
@@ -182,52 +182,29 @@ const NavButton = ({ title, onClick }) => {
   );
 };
 
-const Gallery = () => {
-  return (
-    <div>
-      <h1>Gallery</h1>
-      <p>Coming Soon</p>
-    </div>
-  );
-};
-
-const Posts = () => {
-  return (
-    <div>
-      <h1>Posts</h1>
-      <p>Coming Soon</p>
-    </div>
-  );
-};
-
-const Todo = () => {
-  return (
-    <div>
-      <h1>Todo</h1>
-      <p>Coming Soon</p>
-    </div>
-  );
-};
-
-const Navbar = ({ setSelectedUser }) => {
-  const [page, setPage] = useState(null);
-
+const Navbar = ({ setSelectedUser, setPageId }) => {
   const handleGalleryClick = () => {
-    setPage(<Gallery />);
+    setPageId("Gallery");
   };
 
   const handlePostsClick = () => {
-    setPage(<Posts />);
+    setPageId("Posts");
   };
 
   const handleTodoClick = () => {
-    setPage(<Todo />);
+    setPageId("Todo");
   };
 
   return (
     <div className="test_ctn">
       <div className="test_nav">
-        <NavButton title="Profile" onClick={() => setSelectedUser({ id: 1 })} />
+        <NavButton
+          title="Profile"
+          onClick={() => {
+            setSelectedUser({ id: 1 });
+            setPageId("Profile");
+          }}
+        />
 
         <div className="test_nav_hr_ctn">
           <hr className="test_nav_hr" />
@@ -246,11 +223,10 @@ const Navbar = ({ setSelectedUser }) => {
         </div>
 
         <NavButton title="Todo" onClick={handleTodoClick} />
-        
       </div>
-      <div className="test_body">
+      {/* <div className="test_body">
         {page}
-      </div>
+      </div> */}
     </div>
   );
 };

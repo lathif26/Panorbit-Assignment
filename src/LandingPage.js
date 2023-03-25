@@ -41,9 +41,22 @@ import "./LandingPage.css";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 
+const Gallery = () => {
+  return <div className="coming_soon">Coming Soon</div>;
+};
+
+const Posts = () => {
+  return <div className="coming_soon">Coming Soon</div>;
+};
+
+const Todo = () => {
+  return <div className="coming_soon">Coming Soon</div>;
+};
+
 function LandingPage({ selectedUser }) {
   const { slug } = useParams();
   const [user, setUser] = useState(null);
+  const [pageId, setPageId] = useState("Profile");
   useEffect(() => {
     async function fetchUser() {
       const response = await fetch(`https://panorbit.in/api/users.json`);
@@ -55,18 +68,25 @@ function LandingPage({ selectedUser }) {
   }, []);
 
   return (
-    <div>
-      <Header userProp={user} />
-      <div className="container">
-       
-          <div className="container_1">
-            <Navbar />
-          </div>
-          <div className="container_2">
-            <UserProfile userId={Number(slug)} />
-          </div>
-       
+    <div className="container_landing_page">
+      <Navbar setPageId={setPageId} />
+      <div className="container_profile">
+        <Header userProp={user} title={pageId} />
+        {pageId == "Profile" && <UserProfile userId={Number(slug)} />}
+        {pageId == "Gallery" && <Gallery />}
+        {pageId == "Posts" && <Posts />}
+        {pageId == "Todo" && <Todo />}
       </div>
+
+      {/* <Header userProp={user} />
+      <div className="container">
+        <div className="container_1">
+          <Navbar />
+        </div>
+        <div className="container_2">
+          <UserProfile userId={Number(slug)} />
+        </div>
+      </div> */}
     </div>
   );
 }
