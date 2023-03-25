@@ -16,7 +16,7 @@
 //         <div className="container_1">
 //           <Navbar />
 //         </div>
-       
+
 //             <div className="container_2">
 //               <UserProfile userId={Number(slug)} />
 //             </div>
@@ -47,27 +47,26 @@ function LandingPage({ selectedUser }) {
   useEffect(() => {
     async function fetchUser() {
       const response = await fetch(`https://panorbit.in/api/users.json`);
+      console.log(response);
       const data = await response.json();
-      setUser(data.users.find((u) => u.id === selectedUser.userId));
+      setUser(data.users.find((u) => u.id === selectedUser.id));
     }
     fetchUser();
-  }, [selectedUser.userId]);
+  }, []);
 
-  return  (
+  return (
     <div>
-
-{/* <Header user={user} /> */}
-    <div className="container">
-      <div className="container_outline">
-        <div className="container_1">
-          <Navbar />
-        </div>
-        <div className="container_2">
-          <UserProfile userId={Number(slug)} />
+      <Header userProp={user} />
+      <div className="container">
+        <div className="container_outline">
+          <div className="container_1">
+            <Navbar />
+          </div>
+          <div className="container_2">
+            <UserProfile userId={Number(slug)} />
+          </div>
         </div>
       </div>
-     
-    </div>
     </div>
   );
 }
