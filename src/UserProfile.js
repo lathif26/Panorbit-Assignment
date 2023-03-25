@@ -1,23 +1,5 @@
-// import React from 'react';
-
-// function UserProfile(props) {
-//   return (
-//     <div className="user-profile">
-//       <img src={props.image} alt="User Profile" className="profile-picture" />
-//       <h2>{props.name}</h2>
-//       <p>{props.bio}</p>
-//       <div className="social-links">
-//         <a href={props.github} target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-//         <a href={props.linkedin} target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
-//         <a href={props.twitter} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default UserProfile;
-
 import React, { useState, useEffect } from "react";
+import "./UserProfile.css"
 
 function UserProfile(props) {
   const [user, setUser] = useState(null);
@@ -32,70 +14,78 @@ function UserProfile(props) {
   }, [props.userId]);
   console.log(user);
   return user ? (
-    <div className="user-profile">
-      <div className="row">
-        <div className="col-md-4">
-          <img
-            src={user.profilepicture}
-            alt="User Profile"
-            className="profile-picture"
-          />
-        </div>
-        <div className="col-md-8">
-          <h2>{user.username}</h2>
-          <p>
-            <strong>Email:</strong> {user.email}
-          </p>
-          <p>
-            <strong>Phone:</strong> {user.phone}
-          </p>
-          <p>
-            <strong>Website:</strong> {user.website}
-          </p>
-          <hr />
-          <p>
-            <strong>Company:</strong>
-          </p>
-          <ul>
-            <li>
-              <strong>Name:</strong> {user.company.name}
-            </li>
-            <li>
-              <strong>Catch Phrase:</strong> {user.company.catchPhrase}
-            </li>
-            <li>
-              <strong>BS:</strong> {user.company.bs}
-            </li>
-          </ul>
-        </div>
+
+    <div className="container">
+      <div className="container_1">
+        <img
+          src={user.profilepicture}
+          alt="User Profile"
+          className="profile-picture"
+        />
       </div>
-      <div className="row">
-        <div className="col-md-6">
-          <h3>Address</h3>
-          <p>
-            <strong>Street:</strong> {user.address.street}
-          </p>
-          <p>
-            <strong>Suite:</strong> {user.address.suite}
-          </p>
-          <p>
-            <strong>City:</strong> {user.address.city}
-          </p>
-          <p>
-            <strong>ZIP Code:</strong> {user.address.zipcode}
-          </p>
-          <p>
-            <strong>Geo:</strong> ({user.address.geo.lat},{" "}
-            {user.address.geo.lng})
-          </p>
+      <div className="container_details">
+
+        <strong className='container_details_username'>{user.name}</strong>
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>Username:</span> <strong>{user.username}</strong>
         </div>
-        <div className="col-md-6">
-          <div className="map-container">
-            <img
-              src={`https://maps.googleapis.com/maps/api/staticmap?center=${user.address.geo.lat},${user.address.geo.lng}&zoom=13&size=600x400&key=YOUR_API_KEY`}
-              alt="Map"
-            />
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>E-mail:</span> <strong>{user.email}</strong>
+        </div>
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>Phone:</span> <strong>{user.phone}</strong>
+        </div>
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>Website:</span> <strong>{user.website}</strong>
+        </div>
+
+        <hr className="container_hr_tag" />
+
+        <strong className='container_details_username'>Company</strong>
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>Name:</span> <strong>{user.company.name}</strong>
+        </div>
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>Catch Phrase:</span> <strong>{user.company.catchPhrase}</strong>
+        </div>
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>BS:</span> <strong>{user.company.bs}</strong>
+        </div>
+        <div className='container_details_name'>
+          <span className='container_details_name_label'>Website:</span> <strong>{user.website}</strong>
+        </div>
+
+
+
+      </div>
+
+      <div className="container_2">
+        <div className="container_address">
+          <strong className='container_details_username'>Address</strong>
+          <div className='container_details_name'>
+            <span className='container_details_name_label'>Street:</span> <strong>{user.address.street}</strong>
           </div>
+          <div className='container_details_name'>
+            <span className='container_details_name_label'>Suite:</span> <strong>{user.address.suite}</strong>
+          </div>
+          <div className='container_details_name'>
+            <span className='container_details_name_label'>City:</span> <strong>{user.address.city}</strong>
+          </div>
+          <div className='container_details_name'>
+            <span className='container_details_name_label'>Zipcode:</span> <strong>{user.address.zipcode}</strong>
+          </div>
+
+
+
+
+        </div>
+        <div className="container_map">
+
+          <iframe
+            src={`https://maps.google.com/maps?q=${user.address.geo.lat},${user.address.geo.lng}&hl=es;&output=embed`}
+            alt="Map"
+          />
+{/* //{`https://maps.googleapis.com/maps/api/staticmap?center=${user.address.geo.lat},${user.address.geo.lng}&zoom=13&size=600x400&key=AIzaSyBEJxktPmh2Q5maCSNpW71DhHXrMXLLBU0`} */}
         </div>
       </div>
     </div>
